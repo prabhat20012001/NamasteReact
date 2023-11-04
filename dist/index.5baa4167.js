@@ -2948,42 +2948,43 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        className: "head",
-        tabIndex: 5,
-        children: "Namaste jsx using Jsx"
-    }, void 0, false, {
-        fileName: "app.js",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-_c = Title;
-const JsxHeading = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        id: "heading",
+const title = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+    className: "head",
+    tabIndex: 5,
+    children: "Namaste jsx using Jsx"
+}, void 0, false, {
+    fileName: "app.js",
+    lineNumber: 5,
+    columnNumber: 5
+}, undefined);
+const number = 1000;
+const JsxHeading = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "container",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+            title,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                id: "heading",
+                children: "Namaste React jsx heading"
+            }, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 12,
+                lineNumber: 14,
                 columnNumber: 1
-            }, undefined),
-            "Namaste React jsx heading"
+            }, undefined)
         ]
     }, void 0, true, {
         fileName: "app.js",
-        lineNumber: 11,
-        columnNumber: 1
+        lineNumber: 12,
+        columnNumber: 5
     }, undefined);
-_c1 = JsxHeading;
-// console.log(jsxHeading)
+_c = JsxHeading;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JsxHeading, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 21,
+    lineNumber: 24,
     columnNumber: 13
 }, undefined));
-var _c, _c1;
-$RefreshReg$(_c, "Title");
-$RefreshReg$(_c1, "JsxHeading");
+var _c;
+$RefreshReg$(_c, "JsxHeading");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {
