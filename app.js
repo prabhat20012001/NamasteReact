@@ -1,14 +1,21 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 
-const heading=React.createElement("h1",{id:"heading"},"Namaste React")
+const Title=()=>(
+    <h1 className="head" tabIndex={5}>
+        Namaste jsx using Jsx
+    </h1>
+)
 
-console.log(heading)
-const jsxHeading=<h1 id="heading">Namaste React jsx heading</h1>
-console.log(jsxHeading)
+const JsxHeading=()=>(
+<h1 id="heading">
+<Title/>
+
+    Namaste React jsx heading</h1>)
+// console.log(jsxHeading)
 const root=ReactDOM.createRoot(document.getElementById("root"))
 
 
 
 
-root.render(heading)
+root.render(<JsxHeading/>)

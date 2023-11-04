@@ -2948,21 +2948,42 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const heading = /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {
-    id: "heading"
-}, "Namaste React");
-console.log(heading);
-const jsxHeading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    id: "heading",
-    children: "Namaste React jsx heading"
-}, void 0, false, {
-    fileName: "app.js",
-    lineNumber: 7,
-    columnNumber: 18
-}, undefined);
-console.log(jsxHeading);
+const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        className: "head",
+        tabIndex: 5,
+        children: "Namaste jsx using Jsx"
+    }, void 0, false, {
+        fileName: "app.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+_c = Title;
+const JsxHeading = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        id: "heading",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 12,
+                columnNumber: 1
+            }, undefined),
+            "Namaste React jsx heading"
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 11,
+        columnNumber: 1
+    }, undefined);
+_c1 = JsxHeading;
+// console.log(jsxHeading)
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JsxHeading, {}, void 0, false, {
+    fileName: "app.js",
+    lineNumber: 21,
+    columnNumber: 13
+}, undefined));
+var _c, _c1;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "JsxHeading");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {
