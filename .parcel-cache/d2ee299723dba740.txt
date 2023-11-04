@@ -15,14 +15,14 @@
 71C:\Users\admin3\Desktop\namaste-react\node_modules\semver\bin\semver.js133435065040056176 0
 126C:\Users\admin3\Desktop\namaste-react\node_modules\node-gyp-build-optional-packages\node_modules\detect-libc\lib\filesystem.js133435065015414547 0
 108C:\Users\admin3\Desktop\namaste-react\node_modules\@parcel\runtime-js\src\helpers\browser\prefetch-loader.js133435065112451229 0
-42C:\Users\admin3\Desktop\namaste-react\dist133435434817528633 1
+42C:\Users\admin3\Desktop\namaste-react\dist133435437903929354 1
 86C:\Users\admin3\Desktop\namaste-react\node_modules\update-browserslist-db\package.json133435065018241475 0
 83C:\Users\admin3\Desktop\namaste-react\node_modules\css-tree\cjs\tokenizer\types.cjs133435065060529819 0
 68C:\Users\admin3\Desktop\namaste-react\node_modules\@msgpackr-extract133435094007318532 1
 48C:\Users\admin3\Desktop\namaste-react\.gitignore133435071493719566 0
 77C:\Users\admin3\Desktop\namaste-react\node_modules\svgo\plugins\cleanupIds.js133435065024396517 0
 99C:\Users\admin3\Desktop\namaste-react\node_modules\caniuse-lite\data\features\html-media-capture.js133435065089119068 0
-44C:\Users\admin3\Desktop\namaste-react\app.js133435434809148412 0
+44C:\Users\admin3\Desktop\namaste-react\app.js133435437741429853 0
 48C:\Users\admin3\Desktop\namaste-react\index.html133435098825946544 0
 64C:\Users\admin3\Desktop\namaste-react\node_modules\color-convert133435065019209608 1
 77C:\Users\admin3\Desktop\namaste-react\node_modules\css-tree\cjs\syntax\pseudo133435065053110960 1
@@ -5767,7 +5767,7 @@
 85C:\Users\admin3\Desktop\namaste-react\node_modules\@parcel\core\src\serializerCore.js133435065161417969 0
 88C:\Users\admin3\Desktop\namaste-react\node_modules\@parcel\cache\src\IDBCache.browser.js133435065085220926 0
 88C:\Users\admin3\Desktop\namaste-react\node_modules\@parcel\core\src\SymbolPropagation.js133435065161722954 0
-60C:\Users\admin3\Desktop\namaste-react\dist\index.5baa4167.js133435434817310082 0
+60C:\Users\admin3\Desktop\namaste-react\dist\index.5baa4167.js133435437903719400 0
 85C:\Users\admin3\Desktop\namaste-react\node_modules\@parcel\core\src\Transformation.js133435065164252237 0
 87C:\Users\admin3\Desktop\namaste-react\node_modules\@parcel\core\src\UncommittedAsset.js133435065164509710 0
 77C:\Users\admin3\Desktop\namaste-react\node_modules\@parcel\core\src\worker.js133435065164893443 0
@@ -5944,7 +5944,7 @@
 60C:\Users\admin3\Desktop\namaste-react\node_modules\.bin\svgo133435065700194920 0
 64C:\Users\admin3\Desktop\namaste-react\node_modules\.bin\svgo.ps1133435065700194920 0
 82C:\Users\admin3\Desktop\namaste-react\node_modules\.bin\update-browserslist-db.cmd133435065700316770 0
-64C:\Users\admin3\Desktop\namaste-react\dist\index.5baa4167.js.map133435434817487829 0
+64C:\Users\admin3\Desktop\namaste-react\dist\index.5baa4167.js.map133435437903899258 0
 60C:\Users\admin3\Desktop\namaste-react\dist\index.7c0ccee6.js133435076594699984 0
 64C:\Users\admin3\Desktop\namaste-react\dist\index.7c0ccee6.js.map133435076594809354 0
 65C:\Users\admin3\Desktop\namaste-react\dist\index.9e4c6fd2.css.map133435431397885015 0
