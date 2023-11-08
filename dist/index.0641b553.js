@@ -27456,6 +27456,16 @@ var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
     let [filterResturant, setfilterResturant] = (0, _react.useState)((0, _mockdataDefault.default));
+    // console.log("total resturant:",resturantList)
+    // console.log("filtered resturant",filterResturant)
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9622536&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        console.log("json", json);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
@@ -27470,12 +27480,12 @@ const Body = ()=>{
                     children: "Top Rated Restaurants"
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 11,
+                    lineNumber: 23,
                     columnNumber: 5
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 10,
+                lineNumber: 22,
                 columnNumber: 1
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27484,22 +27494,22 @@ const Body = ()=>{
                         resData: resturant
                     }, index, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 21,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 18,
+                lineNumber: 30,
                 columnNumber: 1
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 9,
+        lineNumber: 21,
         columnNumber: 1
     }, undefined);
 };
-_s(Body, "a5E4InD/XNgevfWFuCT5BDTuvUI=");
+_s(Body, "9/18smCmeyvV3CGbvuhNxVoJM8w=");
 _c = Body;
 exports.default = Body;
 var _c;
