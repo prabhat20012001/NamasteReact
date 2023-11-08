@@ -29149,41 +29149,43 @@ const Body = ()=>{
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search",
-                children: "Search"
-            }, void 0, false, {
+                className: "filter",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "filter-btn",
+                        onClick: filterResturant = (0, _mockdataDefault.default).filter((res)=>res.info.avgRating > 4),
+                        children: "Top Rated Restaurants"
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 9,
+                        columnNumber: 5
+                    }, undefined),
+                    console.log(filterResturant)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/Body.js",
                 lineNumber: 8,
                 columnNumber: 1
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
-                children: [
-                    (0, _mockdataDefault.default).map((resturant, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturanCradDefault.default), {
-                            resData: resturant
-                        }, index, false, {
-                            fileName: "src/components/Body.js",
-                            lineNumber: 14,
-                            columnNumber: 13
-                        }, undefined)),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturanCradDefault.default), {
-                        resData: (0, _mockdataDefault.default)[0]
-                    }, void 0, false, {
+                children: filterResturant.map((resturant, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturanCradDefault.default), {
+                        resData: resturant
+                    }, index, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 17,
-                        columnNumber: 1
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                        lineNumber: 15,
+                        columnNumber: 9
+                    }, undefined))
+            }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 11,
+                lineNumber: 12,
                 columnNumber: 1
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
         lineNumber: 7,
-        columnNumber: 9
+        columnNumber: 1
     }, undefined);
 };
 _c = Body;
