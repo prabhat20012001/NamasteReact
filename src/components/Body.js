@@ -3,6 +3,7 @@ import ResturantCard from "./ResturantCard";
 import Shimmer from './Shimmer';
 const Body=()=>{
 let [filterResturant,setfilterResturant]=useState([])
+let [searchText,setSearchText]=useState("")
 // console.log("total resturant:",resturantList)
 // console.log("filtered resturant",filterResturant)
 useEffect(()=>{
@@ -18,9 +19,13 @@ const fetchData=async()=>{
 //     return <Shimmer/>
 // }
 
-    return filterResturant.length==0?<Shimmer/>:(
+    return filterResturant.length==0?(<Shimmer/>):(
 <div className="body">  
 <div className="filter">
+    <div className='search'>
+<input type='text' className='search-box' value={searchText} onChange={(e)=>setSearchText(e.target.value)}/>
+<button onClick={()=>{console.log(searchText)}}>Search</button>
+    </div>
     <button className="filter-btn"onClick={()=>{
         const filteredList=filterResturant.filter((res)=>res.info.avgRating>4)
         setfilterResturant(filteredList)
