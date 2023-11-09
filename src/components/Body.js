@@ -1,10 +1,8 @@
 import React, { useState,useEffect } from 'react';
-
 import ResturantCard from "./ResturantCard";
-import resturantList from "../utils/mockdata";
-
+import Shimmer from './Shimmer';
 const Body=()=>{
-let [filterResturant,setfilterResturant]=useState(resturantList)
+let [filterResturant,setfilterResturant]=useState([])
 // console.log("total resturant:",resturantList)
 // console.log("filtered resturant",filterResturant)
 useEffect(()=>{
@@ -13,8 +11,11 @@ useEffect(()=>{
 const fetchData=async()=>{
     const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9622536&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     const json=await data.json()
-    console.log("json",json)
-
+    console.log("data",json)
+    setfilterResturant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+}
+if(filterResturant.length==0){
+    return <Shimmer/>
 }
 
     return(

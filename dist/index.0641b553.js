@@ -27450,12 +27450,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _resturantCard = require("./ResturantCard");
 var _resturantCardDefault = parcelHelpers.interopDefault(_resturantCard);
-var _mockdata = require("../utils/mockdata");
-var _mockdataDefault = parcelHelpers.interopDefault(_mockdata);
+var _shimmer = require("./Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
-    let [filterResturant, setfilterResturant] = (0, _react.useState)((0, _mockdataDefault.default));
+    let [filterResturant, setfilterResturant] = (0, _react.useState)([]);
     // console.log("total resturant:",resturantList)
     // console.log("filtered resturant",filterResturant)
     (0, _react.useEffect)(()=>{
@@ -27464,8 +27464,14 @@ const Body = ()=>{
     const fetchData = async ()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9622536&lng=77.6979885&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log("json", json);
+        console.log("data", json);
+        setfilterResturant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
+    if (filterResturant.length == 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 18,
+        columnNumber: 12
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
@@ -27480,12 +27486,12 @@ const Body = ()=>{
                     children: "Top Rated Restaurants"
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 23,
+                    lineNumber: 24,
                     columnNumber: 5
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 22,
+                lineNumber: 23,
                 columnNumber: 1
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27494,22 +27500,22 @@ const Body = ()=>{
                         resData: resturant
                     }, index, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 33,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 1
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 1
     }, undefined);
 };
-_s(Body, "9/18smCmeyvV3CGbvuhNxVoJM8w=");
+_s(Body, "D3Epy65yPeI9rPkm+pw5Vu8eOf0=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -27520,1648 +27526,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/mockdata":"3drqL","react":"21dqq","./ResturantCard":"7LKZL"}],"3drqL":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const resturantList = [
-    {
-        "info": {
-            "id": "271483",
-            "name": "Burger King",
-            "cloudinaryImageId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
-            "locality": "VR Mall",
-            "areaName": "Krishnarajapura",
-            "costForTwo": "\u20B9350 for two",
-            "cuisines": [
-                "Burgers",
-                "American"
-            ],
-            "avgRating": 4.1,
-            "feeDetails": {
-                "restaurantId": "271483",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 8000
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 8000
-            },
-            "parentId": "166",
-            "avgRatingString": "4.1",
-            "totalRatingsString": "5K+",
-            "sla": {
-                "deliveryTime": 31,
-                "lastMileTravel": 6.2,
-                "serviceability": "SERVICEABLE",
-                "slaString": "31 mins",
-                "lastMileTravelString": "6.2 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "60% OFF",
-                "subHeader": "UPTO \u20B9120"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/burger-king-vr-mall-krishnarajapura-bangalore-271483",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "506323",
-            "name": "Louis Burger",
-            "cloudinaryImageId": "19d3d352cc815b9d88b22617b41fa97b",
-            "locality": "Siddapura",
-            "areaName": "Whitefield",
-            "costForTwo": "\u20B9600 for two",
-            "cuisines": [
-                "Burgers",
-                "American",
-                "Fast Food"
-            ],
-            "avgRating": 4.2,
-            "feeDetails": {
-                "restaurantId": "506323",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 7700
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 7700
-            },
-            "parentId": "22485",
-            "avgRatingString": "4.2",
-            "totalRatingsString": "1K+",
-            "sla": {
-                "deliveryTime": 32,
-                "lastMileTravel": 5.6,
-                "serviceability": "SERVICEABLE",
-                "slaString": "32 mins",
-                "lastMileTravelString": "5.6 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 04:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "\u20B9125 OFF",
-                "subHeader": "ABOVE \u20B9249",
-                "discountTag": "FLAT DEAL"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/louis-burger-siddapura-whitefield-bangalore-506323",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "23688",
-            "name": "McDonald's",
-            "cloudinaryImageId": "bb7ae131544c7d37e10fc5faf76f09d6",
-            "locality": "Marathahalli",
-            "areaName": "Brookefield",
-            "costForTwo": "\u20B9400 for two",
-            "cuisines": [
-                "Burgers",
-                "Beverages",
-                "Cafe",
-                "Desserts"
-            ],
-            "avgRating": 4.2,
-            "feeDetails": {
-                "restaurantId": "23688",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 5200
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 5200
-            },
-            "parentId": "630",
-            "avgRatingString": "4.2",
-            "totalRatingsString": "10K+",
-            "sla": {
-                "deliveryTime": 20,
-                "lastMileTravel": 4.2,
-                "serviceability": "SERVICEABLE",
-                "slaString": "20 mins",
-                "lastMileTravelString": "4.2 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 04:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "aggregatedDiscountInfoV2": {},
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/mcdonalds-marathahalli-brookefield-bangalore-23688",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "10866",
-            "name": "Pizza Hut",
-            "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
-            "locality": "Munnekolalu Village",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9350 for two",
-            "cuisines": [
-                "Pizzas"
-            ],
-            "avgRating": 3.8,
-            "feeDetails": {
-                "restaurantId": "10866",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "721",
-            "avgRatingString": "3.8",
-            "totalRatingsString": "10K+",
-            "sla": {
-                "deliveryTime": 20,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "20 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 04:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "50% OFF",
-                "subHeader": "UPTO \u20B9100"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/pizza-hut-munnekolalu-village-marathahalli-bangalore-10866",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "341895",
-            "name": "Burger Seigneur",
-            "cloudinaryImageId": "k4z46joj5ozirqpyww1z",
-            "locality": "Indiranagar",
-            "areaName": "Indiranagar",
-            "costForTwo": "\u20B91300 for two",
-            "cuisines": [
-                "American",
-                "Continental",
-                "Burgers",
-                "Beverages"
-            ],
-            "avgRating": 4.3,
-            "feeDetails": {
-                "restaurantId": "341895",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 8700
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 8700
-            },
-            "parentId": "12095",
-            "avgRatingString": "4.3",
-            "totalRatingsString": "1K+",
-            "sla": {
-                "deliveryTime": 26,
-                "lastMileTravel": 6.9,
-                "serviceability": "SERVICEABLE",
-                "slaString": "26 mins",
-                "lastMileTravelString": "6.9 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 02:59:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "\u20B9150 OFF",
-                "subHeader": "ABOVE \u20B9899",
-                "discountTag": "FLAT DEAL"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/burger-seigneur-indiranagar-bangalore-341895",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "70842",
-            "name": "WarmOven Cake & Desserts",
-            "cloudinaryImageId": "e938fb5f416cc2c28b4b519cf27b04cc",
-            "locality": "Aces Layout",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9200 for two",
-            "cuisines": [
-                "Bakery",
-                "Desserts",
-                "Ice Cream",
-                "Beverages"
-            ],
-            "avgRating": 4,
-            "feeDetails": {
-                "restaurantId": "70842",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "9696",
-            "avgRatingString": "4.0",
-            "totalRatingsString": "5K+",
-            "sla": {
-                "deliveryTime": 19,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "19 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "60% OFF",
-                "subHeader": "UPTO \u20B9120"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/warmoven-cake-and-desserts-aces-layout-marathahalli-bangalore-70842",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "70845",
-            "name": "Indiana Burgers",
-            "cloudinaryImageId": "cgdljuememvm2jjxycik",
-            "locality": "Aces Layout",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9150 for two",
-            "cuisines": [
-                "Burgers",
-                "American",
-                "Fast Food",
-                "Beverages",
-                "Desserts"
-            ],
-            "avgRating": 3.8,
-            "feeDetails": {
-                "restaurantId": "70845",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "5714",
-            "avgRatingString": "3.8",
-            "totalRatingsString": "1K+",
-            "sla": {
-                "deliveryTime": 26,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "26 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {
-                "textExtendedBadges": [
-                    {
-                        "iconId": "guiltfree/GF_Logo_android_3x",
-                        "shortDescription": "options available",
-                        "fontColor": "#7E808C"
-                    }
-                ]
-            },
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {
-                        "badgeObject": [
-                            {
-                                "attributes": {
-                                    "description": "",
-                                    "fontColor": "#7E808C",
-                                    "iconId": "guiltfree/GF_Logo_android_3x",
-                                    "shortDescription": "options available"
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "10% OFF",
-                "subHeader": "UPTO \u20B940"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/indiana-burgers-aces-layout-marathahalli-bangalore-70845",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "502",
-            "name": "Kaati Zone Rolls & Wraps",
-            "cloudinaryImageId": "uipyyasf5imyhvooj1iy",
-            "locality": "Aces Layout",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9150 for two",
-            "cuisines": [
-                "Fast Food",
-                "Bengali",
-                "Beverages",
-                "Desserts"
-            ],
-            "avgRating": 4,
-            "feeDetails": {
-                "restaurantId": "502",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "248306",
-            "avgRatingString": "4.0",
-            "totalRatingsString": "5K+",
-            "sla": {
-                "deliveryTime": 21,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "21 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "40% OFF",
-                "subHeader": "UPTO \u20B980"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/kaati-zone-rolls-and-wraps-aces-layout-marathahalli-bangalore-502",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "448415",
-            "name": "Momo Zone - The Momo Company",
-            "cloudinaryImageId": "vaqld85fthdbwri54aao",
-            "locality": "ACES Layout",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9150 for two",
-            "cuisines": [
-                "Chinese",
-                "Tibetan",
-                "Fast Food"
-            ],
-            "avgRating": 4.1,
-            "feeDetails": {
-                "restaurantId": "448415",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "382343",
-            "avgRatingString": "4.1",
-            "totalRatingsString": "100+",
-            "sla": {
-                "deliveryTime": 28,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "28 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "40% OFF",
-                "subHeader": "UPTO \u20B980"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/momo-zone-the-momo-company-aces-layout-marathahalli-bangalore-448415",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "236943",
-            "name": "Momoz",
-            "cloudinaryImageId": "mja3a2scm2c4er3hkpvk",
-            "locality": "Sai Durga Enclave",
-            "areaName": "Bellandur",
-            "costForTwo": "\u20B9350 for two",
-            "cuisines": [
-                "Chinese",
-                "Thai",
-                "Seafood",
-                "Asian",
-                "Malaysian"
-            ],
-            "avgRating": 3.8,
-            "feeDetails": {
-                "restaurantId": "236943",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 9000
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 9000
-            },
-            "parentId": "2486",
-            "avgRatingString": "3.8",
-            "totalRatingsString": "5K+",
-            "sla": {
-                "deliveryTime": 32,
-                "lastMileTravel": 7.4,
-                "serviceability": "SERVICEABLE",
-                "slaString": "32 mins",
-                "lastMileTravelString": "7.4 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 04:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "\u20B9150 OFF",
-                "subHeader": "ABOVE \u20B9499",
-                "discountTag": "FLAT DEAL"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/momoz-sai-durga-enclave-bellandur-bangalore-236943",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "78138",
-            "name": "Imperio Restaurant",
-            "cloudinaryImageId": "a1629b9c7f59577a55411e94425c6d99",
-            "locality": "kundalahalli",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9300 for two",
-            "cuisines": [
-                "Chinese",
-                "South Indian",
-                "North Indian",
-                "Continental",
-                "Desserts",
-                "Kerala",
-                "Andhra",
-                "Beverages",
-                "Mughlai",
-                "Seafood",
-                "Hyderabadi",
-                "Healthy Food",
-                "Arabian",
-                "Biryani",
-                "Burgers",
-                "Barbecue",
-                "Oriental"
-            ],
-            "avgRating": 3.9,
-            "feeDetails": {
-                "restaurantId": "78138",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "5610",
-            "avgRatingString": "3.9",
-            "totalRatingsString": "10K+",
-            "sla": {
-                "deliveryTime": 21,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "21 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "20% OFF",
-                "subHeader": "UPTO \u20B950"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/imperio-restaurant-kundalahalli-marathahalli-bangalore-78138",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "70844",
-            "name": "Cupcake Bliss Cake & Desserts",
-            "cloudinaryImageId": "40f193d8b23afb2988489dac1258962f",
-            "locality": "ACES Layout",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9200 for two",
-            "cuisines": [
-                "Bakery",
-                "Desserts",
-                "Ice Cream",
-                "Beverages"
-            ],
-            "avgRating": 4,
-            "feeDetails": {
-                "restaurantId": "70844",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "66732",
-            "avgRatingString": "4.0",
-            "totalRatingsString": "500+",
-            "sla": {
-                "deliveryTime": 21,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "21 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "60% OFF",
-                "subHeader": "UPTO \u20B9120"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/cupcake-bliss-cake-and-desserts-aces-layout-marathahalli-bangalore-70844",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "231485",
-            "name": "Subway",
-            "cloudinaryImageId": "1ace5fa65eff3e1223feb696c956b38b",
-            "locality": "Outer Ring Road",
-            "areaName": "Bellandur",
-            "costForTwo": "\u20B9350 for two",
-            "cuisines": [
-                "Salads",
-                "Snacks",
-                "Desserts",
-                "Beverages"
-            ],
-            "avgRating": 4,
-            "feeDetails": {
-                "restaurantId": "231485",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 7000
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 7000
-            },
-            "parentId": "2",
-            "avgRatingString": "4.0",
-            "totalRatingsString": "5K+",
-            "sla": {
-                "deliveryTime": 27,
-                "lastMileTravel": 5.9,
-                "serviceability": "SERVICEABLE",
-                "slaString": "27 mins",
-                "lastMileTravelString": "5.9 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 02:30:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "aggregatedDiscountInfoV2": {},
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/subway-outer-ring-road-bellandur-bangalore-231485",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "149682",
-            "name": "Samosa Party",
-            "cloudinaryImageId": "thzhbierhb2qxhqsl0bo",
-            "locality": "Munnekollal",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9100 for two",
-            "cuisines": [
-                "Fast Food",
-                "Snacks",
-                "Beverages",
-                "Chaat",
-                "North Indian",
-                "Street Food",
-                "Sweets",
-                "Desserts",
-                "Punjabi",
-                "Bakery"
-            ],
-            "avgRating": 4.2,
-            "feeDetails": {
-                "restaurantId": "149682",
-                "fees": [
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 3600
-                    },
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 3600
-            },
-            "parentId": "6364",
-            "avgRatingString": "4.2",
-            "totalRatingsString": "10K+",
-            "sla": {
-                "deliveryTime": 18,
-                "lastMileTravel": 2.8,
-                "serviceability": "SERVICEABLE",
-                "slaString": "18 mins",
-                "lastMileTravelString": "2.8 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-14 00:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "select": true,
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "60% OFF",
-                "subHeader": "UPTO \u20B9120"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/samosa-party-munnekollal-marathahalli-bangalore-149682",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "744117",
-            "name": "GoGreen by Nomad Pizza",
-            "cloudinaryImageId": "002ec2739d031ce63ca4dc00282dcdad",
-            "locality": "Outer Ring Road",
-            "areaName": "Bellandur",
-            "costForTwo": "\u20B9700 for two",
-            "cuisines": [
-                "Pizzas",
-                "Italian",
-                "Beverages"
-            ],
-            "avgRating": 4.8,
-            "veg": true,
-            "feeDetails": {
-                "restaurantId": "744117",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 3600
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 3600
-            },
-            "parentId": "385103",
-            "avgRatingString": "4.8",
-            "totalRatingsString": "20+",
-            "sla": {
-                "deliveryTime": 24,
-                "lastMileTravel": 2.7,
-                "serviceability": "SERVICEABLE",
-                "slaString": "24 mins",
-                "lastMileTravelString": "2.7 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 04:00:00",
-                "opened": true
-            },
-            "badges": {
-                "imageBadges": [
-                    {
-                        "imageId": "newg.png",
-                        "description": "Gourmet"
-                    },
-                    {
-                        "imageId": "v1695133679/badges/Pure_Veg111.png",
-                        "description": "pureveg"
-                    }
-                ]
-            },
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {
-                        "badgeObject": [
-                            {
-                                "attributes": {
-                                    "description": "Gourmet",
-                                    "imageId": "newg.png"
-                                }
-                            },
-                            {
-                                "attributes": {
-                                    "description": "pureveg",
-                                    "imageId": "v1695133679/badges/Pure_Veg111.png"
-                                }
-                            }
-                        ]
-                    },
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "60% OFF",
-                "subHeader": "UPTO \u20B9120"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "isNewlyOnboarded": true,
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/gogreen-by-nomad-pizza-outer-ring-road-bellandur-bangalore-744117",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "209764",
-            "name": "Third Wave Coffee",
-            "cloudinaryImageId": "d96267738c19ec62acb5390e52faba41",
-            "locality": "Ambalipura",
-            "areaName": "Haralur",
-            "costForTwo": "\u20B9400 for two",
-            "cuisines": [
-                "Beverages",
-                "Bakery",
-                "Continental"
-            ],
-            "avgRating": 4.3,
-            "feeDetails": {
-                "restaurantId": "209764",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 9000
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 9000
-            },
-            "parentId": "274773",
-            "avgRatingString": "4.3",
-            "totalRatingsString": "1K+",
-            "sla": {
-                "deliveryTime": 28,
-                "lastMileTravel": 7.2,
-                "serviceability": "SERVICEABLE",
-                "slaString": "28 mins",
-                "lastMileTravelString": "7.2 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:00:00",
-                "opened": true
-            },
-            "badges": {
-                "textExtendedBadges": [
-                    {
-                        "iconId": "guiltfree/GF_Logo_android_3x",
-                        "shortDescription": "options available",
-                        "fontColor": "#7E808C"
-                    }
-                ]
-            },
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {
-                        "badgeObject": [
-                            {
-                                "attributes": {
-                                    "description": "",
-                                    "fontColor": "#7E808C",
-                                    "iconId": "guiltfree/GF_Logo_android_3x",
-                                    "shortDescription": "options available"
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "\u20B9100 OFF",
-                "subHeader": "ABOVE \u20B9499",
-                "discountTag": "FLAT DEAL"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/third-wave-coffee-ambalipura-haralur-bangalore-209764",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "720609",
-            "name": "Nomad Pizza- Traveller Series",
-            "cloudinaryImageId": "a14f952df15d37ac5017519beab18683",
-            "locality": "Kadubisanahalli",
-            "areaName": "Bellandur Sarjapur",
-            "costForTwo": "\u20B9400 for two",
-            "cuisines": [
-                "Pizzas",
-                "Italian",
-                "Beverages"
-            ],
-            "avgRating": 4.1,
-            "feeDetails": {
-                "restaurantId": "720609",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "251919",
-            "avgRatingString": "4.1",
-            "totalRatingsString": "50+",
-            "sla": {
-                "deliveryTime": 27,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "27 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 04:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "50% OFF",
-                "subHeader": "UPTO \u20B9100"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "isNewlyOnboarded": true,
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/nomad-pizza-traveller-series-kadubisanahalli-bellandur-sarjapur-bangalore-720609",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "395208",
-            "name": "McDonald's Gourmet Burger Collection",
-            "cloudinaryImageId": "hll0sm7xga5krgpgfgpl",
-            "locality": "Murgesh Pallya",
-            "areaName": "Indiranagar",
-            "costForTwo": "\u20B9600 for two",
-            "cuisines": [
-                "Burgers",
-                "Beverages",
-                "Cafe",
-                "Desserts"
-            ],
-            "avgRating": 4.2,
-            "feeDetails": {
-                "restaurantId": "395208",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 7000
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 7000
-            },
-            "parentId": "10761",
-            "avgRatingString": "4.2",
-            "totalRatingsString": "100+",
-            "sla": {
-                "deliveryTime": 26,
-                "lastMileTravel": 5.6,
-                "serviceability": "SERVICEABLE",
-                "slaString": "26 mins",
-                "lastMileTravelString": "5.6 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 03:45:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "aggregatedDiscountInfoV2": {},
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/mcdonalds-gourmet-burger-collection-murgesh-pallya-indiranagar-bangalore-395208",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "427",
-            "name": "Hotel Empire",
-            "cloudinaryImageId": "vumnivx75awxz9eo1czq",
-            "locality": "Indiranagar",
-            "areaName": "Indiranagar",
-            "costForTwo": "\u20B9450 for two",
-            "cuisines": [
-                "North Indian",
-                "Kebabs",
-                "Biryani"
-            ],
-            "avgRating": 4.2,
-            "feeDetails": {
-                "restaurantId": "427",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 8000
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 8000
-            },
-            "parentId": "475",
-            "avgRatingString": "4.2",
-            "totalRatingsString": "10K+",
-            "sla": {
-                "deliveryTime": 31,
-                "lastMileTravel": 6.7,
-                "serviceability": "SERVICEABLE",
-                "slaString": "31 mins",
-                "lastMileTravelString": "6.7 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-08 04:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "10% OFF",
-                "subHeader": "ABOVE \u20B9500",
-                "discountTag": "FLAT DEAL"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/hotel-empire-indiranagar-bangalore-427",
-            "type": "WEBLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "59067",
-            "name": "Samosa Singh",
-            "cloudinaryImageId": "77baefd8a5e319c828b4d7dff7260644",
-            "locality": "Munekolalla",
-            "areaName": "Marathahalli",
-            "costForTwo": "\u20B9150 for two",
-            "cuisines": [
-                "Snacks",
-                "North Indian",
-                "Beverages"
-            ],
-            "avgRating": 4.1,
-            "veg": true,
-            "feeDetails": {
-                "restaurantId": "59067",
-                "fees": [
-                    {
-                        "name": "BASE_TIME"
-                    },
-                    {
-                        "name": "BASE_DISTANCE",
-                        "fee": 4400
-                    },
-                    {
-                        "name": "ANCILLARY_SURGE_FEE"
-                    }
-                ],
-                "totalFee": 4400
-            },
-            "parentId": "5639",
-            "avgRatingString": "4.1",
-            "totalRatingsString": "5K+",
-            "sla": {
-                "deliveryTime": 26,
-                "lastMileTravel": 3.5,
-                "serviceability": "SERVICEABLE",
-                "slaString": "26 mins",
-                "lastMileTravelString": "3.5 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2023-11-15 00:00:00",
-                "opened": true
-            },
-            "badges": {},
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {},
-                    "textBased": {},
-                    "textExtendedBadges": {}
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "10% OFF",
-                "subHeader": "UPTO \u20B940"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {},
-                    "video": {}
-                }
-            },
-            "reviewsSummary": {},
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {}
-        },
-        "analytics": {},
-        "cta": {
-            "link": "https://www.swiggy.com/restaurants/samosa-singh-munekolalla-marathahalli-bangalore-59067",
-            "type": "WEBLINK"
-        }
-    }
-];
-exports.default = resturantList;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7LKZL":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","./ResturantCard":"7LKZL","./Shimmer":"g6ZGj"}],"7LKZL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$195a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29246,6 +27611,111 @@ parcelHelpers.export(exports, "LOGO_URL", ()=>LOGO_URL);
 const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
 const LOGO_URL = "https://t3.ftcdn.net/jpg/02/41/30/72/360_F_241307210_MjjaJC3SJy2zJZ6B7bKGMRsKQbdwRSze.jpg";
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["iWvxK","1xC6H","bNKaB"], "bNKaB", "parcelRequire164e")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g6ZGj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0b04.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>Shimmer);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+function Shimmer() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "shimmer-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 6,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 7,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 8,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 9,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 10,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 11,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 12,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 13,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: "Cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 14,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Shimmer.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = Shimmer;
+var _c;
+$RefreshReg$(_c, "Shimmer");
+
+  $parcel$ReactRefreshHelpers$0b04.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["iWvxK","1xC6H","bNKaB"], "bNKaB", "parcelRequire164e")
 
 //# sourceMappingURL=index.0641b553.js.map
