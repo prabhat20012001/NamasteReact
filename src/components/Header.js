@@ -16,7 +16,8 @@ const Header=()=>{
                     <li>Contact Us</li>
                     <li>Cart</li>
                     <button className="login" onClick={()=>{btnName=="login"?setbtnName("Logout"):setbtnName("login")
-                      console.log(btnName)}}
+                    //   console.log(btnName)
+                    }}
 
                   >{btnName}</button>
                    
