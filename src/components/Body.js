@@ -14,11 +14,11 @@ const fetchData=async()=>{
     console.log("data",json)
     setfilterResturant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 }
-if(filterResturant.length==0){
-    return <Shimmer/>
-}
+// if(filterResturant.length==0){
+//     return <Shimmer/>
+// }
 
-    return(
+    return filterResturant.length==0?<Shimmer/>:(
 <div className="body">  
 <div className="filter">
     <button className="filter-btn"onClick={()=>{

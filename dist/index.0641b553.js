@@ -27467,12 +27467,14 @@ const Body = ()=>{
         console.log("data", json);
         setfilterResturant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
-    if (filterResturant.length == 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+    // if(filterResturant.length==0){
+    //     return <Shimmer/>
+    // }
+    return filterResturant.length == 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 18,
-        columnNumber: 12
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        lineNumber: 21,
+        columnNumber: 38
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27629,72 +27631,63 @@ function Shimmer() {
         className: "shimmer-container",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 6,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 7,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 8,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 9,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 10,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 11,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 12,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 13,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
+                className: "shimmer-card"
             }, void 0, false, {
                 fileName: "src/components/Shimmer.js",
                 lineNumber: 14,
